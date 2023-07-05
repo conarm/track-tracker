@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if rating %}
+        <!-- If we are viewing a valid assessment, display the information -->
+        <h3>Viewing review #{{ rating.id }}: {{ rating.album.artist.name }} - {{ rating.album.name }}</h3>
+        <p>Reviewed by user: <i>{{ rating.user.username }}</i></p>
+        <hr>
+        <h4>Rating: {{ rating.rating }}/10</h4>
+        <p>Review: {{ rating.review }}</p>
+        {% if rating.user.username != current_user.username %}
+            <div class="alert alert-info ideas" role="alert" id="likes">
+                Likes: {{rating.likes}}
+            </div>
+
+            <button type="button" class="btn btn-primary" id="{{rating.id}}">Like!</button>
+        {% endif %}
+    {% else %}
+        <!-- Show an error message if an invalid assessment is being viewed -->
+        <h1>Assessment not found!</h1>
+    {% endif %}
+{% endblock %}

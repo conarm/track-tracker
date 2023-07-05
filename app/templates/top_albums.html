@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3>Top Albums</h3>
+<p>Below, in descending order, is a list of the highest rated albums currently on the site.</p>
+
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th>Number</th>
+            <th>Artist</th>
+            <th>Album</th>
+            <th>Overall rating</th>
+        </tr>
+    </thead>
+    <!-- Loop over ratings and create a clickable row leading to the specific view page -->
+    {% set testing = 0 %}
+    {% for album in albums %}
+        <tr class="clickable" onclick="window.location='/album?id={{album.id}}'" id="{{ album.id }}">
+            <td>{{loop.index}}</td>
+            <td>{{album.artist.name}}</td>
+            <td>{{album.name}}</td>
+            <td>{{album.rating}}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

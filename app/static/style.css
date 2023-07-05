@@ -1,0 +1,4 @@
+tr.clickable:hover {
+    background-color: rgb(246, 246, 246);
+    cursor: pointer;
+}

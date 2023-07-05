@@ -1,2 +1,8 @@
 
 fvenv/
+
+tracktracker.log
+
+__pycache__/
+
+migrations/

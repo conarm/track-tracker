@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h3>Welcome to your profile, {{ current_user.username}}!</h3>
+    <p>Here you can view all of your reviews.</p>
+    
+    <h4>Your reviews:</h4>
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th>Artist</th>
+                <th>Album</th>
+                <th>Rating</th>
+                <th>Review</th>
+            </tr>
+        </thead>
+        <!-- Loop over ratings and create a clickable row leading to the specific view page -->
+        {% for rating in ratings %}
+            <tr class="clickable" onclick="window.location='/rating?id={{rating.id}}'" id="{{ rating.id }}">
+                <td>{{rating.album.artist.name}}</td>
+                <td>{{rating.album.name}}</td>
+                <td>{{rating.rating}}</td>
+                <td>{{rating.review}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

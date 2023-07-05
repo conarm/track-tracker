@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h3>All Albums</h3>
+    <p>Below, there is a list of all the albums currently available to review on the site! In order to review one of these, once you are logged in, click the album, and press the review button.</p>
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th>Artist</th>
+                <th>Album</th>
+            </tr>
+        </thead>
+        <!-- Loop over ratings and create a clickable row leading to the specific view page -->
+        {% for album in albums %}
+            <tr class="clickable" onclick="window.location='/album?id={{album.id}}'" id="{{ album.id }}">
+                <td>{{album.artist.name}}</td>
+                <td>{{album.name}}</td>
+            </tr>
+        {% endfor %}
+{% endblock %}

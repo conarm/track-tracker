@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Sign In</h1>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            <p>
+                {{ form.username.label }}<br>
+                {{ form.username(size=64, class_= "form-control") }}
+            </p>
+        </div>
+        <div class="form-group">
+            <p>
+                {{ form.password.label }}<br>
+                {{ form.password(size=32, class_= "form-control") }}
+            </p>
+        </div>
+        <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+        <p>{{ form.submit(class_= "btn btn-primary") }}</p>
+    </form>
+    <a href="/register"><u>New user? Register here!</u></a>
+{% endblock %}

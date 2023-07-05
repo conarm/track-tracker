@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3>Top Reviews</h3>
+<p>Below, in descending order, is a list of the most-liked reviews currently on the site.</p>
+
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th>Number</th>
+            <th>User</th>
+            <th>Artist</th>
+            <th>Album</th>
+            <th>Rating</th>
+            <th>Likes</th>
+        </tr>
+    </thead>
+    <!-- Loop over ratings and create a clickable row leading to the specific view page -->
+    {% for rating in ratings %}
+        <tr class="clickable" onclick="window.location='/rating?id={{rating.id}}'" id="{{ rating.id }}">
+            <td>{{loop.index}}</td>
+            <td>{{rating.user.username}}</td>
+            <td>{{rating.album.artist.name}}</td>
+            <td>{{rating.album.name}}</td>
+            <td>{{rating.rating}}</td>
+            <td>{{rating.likes}}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
