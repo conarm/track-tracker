@@ -1,7 +1,5 @@
 # TrackTracker - A Flask Web Application
 
-## Statement of Purpose
-
 **TrackTracker** is a Flask-based web application designed for music enthusiasts to track their favorite albums, contribute ratings and reviews, and discover new music. The application aggregates user ratings to display the highest-rated albums on a "Top Albums" page and promotes the most-liked reviews on a "Top Reviews" page. It provides a community-driven platform for music fans to engage with others and share their experiences.
 
 ---
