@@ -35,7 +35,7 @@ Once installation has completed and the environment is activated, the applicatio
 ## Features
 
 - **Album Rating and Review:** Users can rate albums, post reviews, and read others’ reviews.
-- **Top Albums/Reviews:** Lists of highest-rated albums and most-liked reviews.
+- **Top Albums/Reviews:** Users can view the highest-rated albums and most-liked reviews.
 - **Likes:** Users can like individual reviews, elevating thoughtful content.
 - **Authentication:** Secure user login and registration system using Flask-Login.
 
@@ -46,7 +46,7 @@ Once installation has completed and the environment is activated, the applicatio
 TrackTracker uses a **three-tier architecture**:
 
 1. **Presentational Tier:** Handles user interactions through HTML, Flask-WTF forms, and Jinja2 templates.
-2. **Business Logic Tier:** Core functionalities like request handling and album rating logic, managed in `views.py`.
+2. **Business Logic Tier:** Handles core functionalities like request handling and album rating logic, managed in `views.py`.
 3. **Data Access Tier:** Communicates with the database using SQLAlchemy ORM to handle models and queries.
 
 ---
@@ -57,7 +57,7 @@ The application uses Flask-WTF to implement and validate forms. Three main forms
 
 - **LoginForm:** For users to log in.
 - **RegistrationForm:** For creating new accounts.
-- **RatingForm:** To submit album ratings and reviews.
+- **RatingForm:** For submitting album ratings and reviews.
 
 Each form includes appropriate field types and validators, ensuring data integrity.
 
@@ -65,7 +65,7 @@ Each form includes appropriate field types and validators, ensuring data integri
 
 ## Database
 
-The application uses **SQLite** with **Flask-SQLAlchemy** for ORM. The models are designed to manage albums, artists, genres, and reviews.
+The application uses **SQLite** with **Flask-SQLAlchemy** for ORM.
 
 The data model can be found below:
 
